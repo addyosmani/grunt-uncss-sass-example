@@ -267,6 +267,15 @@ module.exports = function (grunt) {
             }
         },
 
+        processhtml: {
+            dist: {
+                files: {
+                    '<%= yeoman.dist %>/index.tidy.html': ['<%= yeoman.dist %>/index.html'],
+                    '<%= yeoman.dist %>/about.tidy.html': ['<%= yeoman.dist %>/about.html']
+                }
+            }
+        },
+
         // By default, your `index.html`'s <!-- Usemin block --> will take care of
         // minification. These next options are pre-configured if you do not wish
         // to use the Usemin blocks.
@@ -301,6 +310,7 @@ module.exports = function (grunt) {
                 }
             }
         },
+
         // Copies remaining files to places other tasks can use
         copy: {
             dist: {
@@ -394,6 +404,7 @@ module.exports = function (grunt) {
         'copy:dist',
         //'rev',
         'usemin',
+        'processhtml',
         'htmlmin',
         'uncss'
     ]);
