@@ -1,0 +1,9 @@
+{
+  "name": "grunt-uncss-sass-example",
+  "private": true,
+  "dependencies": {
+    "bootstrap-sass": "git://github.com/twbs/bootstrap-sass.git#v3.1.0",
+    "jquery": "~1.10.2"
+  },
+  "devDependencies": {}
+}
