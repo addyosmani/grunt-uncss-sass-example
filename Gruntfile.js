@@ -267,15 +267,6 @@ module.exports = function (grunt) {
             }
         },
 
-        processhtml: {
-            dist: {
-                files: {
-                    '<%= yeoman.dist %>/index.tidy.html': ['<%= yeoman.dist %>/index.html'],
-                    '<%= yeoman.dist %>/about.tidy.html': ['<%= yeoman.dist %>/about.html']
-                }
-            }
-        },
-
         // By default, your `index.html`'s <!-- Usemin block --> will take care of
         // minification. These next options are pre-configured if you do not wish
         // to use the Usemin blocks.
@@ -306,7 +297,7 @@ module.exports = function (grunt) {
         uncss: {
             dist: {
                 files : {
-                    '<%= yeoman.dist %>/styles/tidy.css': ['<%= yeoman.dist %>/index.html', '<%= yeoman.dist %>/about.html']
+                    '<%= yeoman.dist %>/styles/main.css': ['<%= yeoman.dist %>/index.html', '<%= yeoman.dist %>/about.html']
                 }
             }
         },
@@ -402,10 +393,12 @@ module.exports = function (grunt) {
         'cssmin',
         'uglify',
         'copy:dist',
-        //'rev',
         'usemin',
-        'processhtml',
-        'htmlmin',
+        'htmlmin'
+    ]);
+
+    grunt.registerTask('build-uncss', [
+        'build',
         'uncss'
     ]);
 
